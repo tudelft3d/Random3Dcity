@@ -128,6 +128,14 @@ Performance
 The speed mainly depends on the invoked options. With all the options the engine generates around 100 buildings per minute. The computational complexity is not strictly linear, and a high number of buildings (>20000) will likely eat all of your RAM making the process slower.
 
 
+Special datasets
+---------------------
+
+I have prepared a number of intentionally impaired datasets suited for different types of experiments, such as overlapping buildings and simulated geometric errors. For the full list visit the [data page](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
+
+![Intentional errors](http://3dgeoinfo.bk.tudelft.nl/biljecki/random3dcity/errors/overlapping/overlapping.png)
+
+
 Contact me for questions and feedback
 ---------------------
 Filip Biljecki
