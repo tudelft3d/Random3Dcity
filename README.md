@@ -75,6 +75,10 @@ An experimental feature is the generation of vegetation and streets.
 ![Other-features](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-roads.png)
 
 
+### Interior of buildings
+
+A basic interior of buildings in three LODs may be generated: see the header in the attachment. This is based on another paper from my group that deals with the refinement of the level of detail concept for interior features.
+
 Documented uses
 ---------------------
 
@@ -121,6 +125,9 @@ Vegetation and street network are generated with the flags `-v 1` and `-s 1`, re
 
 It is possible to generate an UUID for each <gml:Polygon> with the option `-id 1`.
 
+### Coordinate system
+
+If you run the building randomiser with the option `-c 1`, the buildings will be placed in the Dutch coordinate system (RD new), somewhere in the Nordoostpolder in the Netherlands. You can easily customise this in the code.
 
 Performance
 ---------------------
