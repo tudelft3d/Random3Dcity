@@ -13,7 +13,7 @@ If you are interested only in the datasets, visit my personal webpage to downloa
 
 # Introduction
 
-This experimental software prototype was developed as a part of my [PhD research](http://3dgeoinfo.bk.tudelft.nl/biljecki/phd.html).
+This experimental software prototype was developed as a part of my [PhD research](http://3dgeoinfo.bk.tudelft.nl/biljecki/phd.html), and it has been designed and developed from scratch.
 
 Procedural modelling engines natively supporting CityGML and designed for generating semantically structured 3D city models in multiple LODs are not available. This project presents an effort to fill this gap.
 
@@ -25,14 +25,14 @@ The second part of the engine reads this data and constructs CityGML data in mul
 ## Conditions for use
 
 
-This software is free to use. However, you are kindly requested to acknowledge the use of this software by citing it in a research paper you are writing, reports, and/or other applicable materials. A research paper is under submission, hence please contact me to give you a reference to cite.
+This software is free to use. However, you are kindly requested to acknowledge the use of this software by citing it in a research paper you are writing, reports, and/or other applicable materials; and mentioning the [3D Geoinformation group at the Delft University of Technology](http://3dgeoinfo.bk.tudelft.nl/). A research paper is under submission, hence please contact me to give you a reference to cite.
 
 Further, I will be very happy to hear if you find this tool useful for your workflow. If you find it useful and/or have suggestions for its improvement, please let me know. Further, I am maintaining a list of users that I notify of corrections and updates.
 
 
-## Academic reference
+## Academic reference with a detailed methodology
 
-Coming soon.
+Coming soon. Journal paper under submission.
 
 
 ## Features and technical details
