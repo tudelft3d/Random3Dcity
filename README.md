@@ -77,7 +77,7 @@ An experimental feature is the generation of vegetation and streets.
 
 ### Interior of buildings
 
-A basic interior of buildings in three LODs may be generated: see the header in the attachment. This is based on another paper from my group that deals with the refinement of the level of detail concept for interior features.
+A basic interior of buildings in three LODs may be generated: see the header in the attachment. This is based on another paper from my group that deals with the refinement of the level of detail concept for interior features. Besides the solids for each floor, a 2D representation per each storey, and a solid for the whole building (offset from the walls) may be generated.
 
 Documented uses
 ---------------------
@@ -133,6 +133,13 @@ Performance
 ---------------------
 
 The speed mainly depends on the invoked options. With all the options the engine generates around 100 buildings per minute. The computational complexity is not strictly linear, and a high number of buildings (>20000) will likely eat all of your RAM making the process slower.
+
+Known issues
+---------------------
+The `generateCityGML.py` program has been known to crash in two cases:
+
++ It runs out of memory if too many buildings are attempted to be generated in CityGML. Reduce the number of buildings and/or their variants (e.g. disable the generation of solids).
++ Uncommonly it crashes when it encounters a very peculiar building to be generated. This does not happen often, and when it does just generate a new set of buildings with `randomiseCity.py`.
 
 
 Special datasets
