@@ -4416,16 +4416,19 @@ if SOLIDS:
 
 if VARIANTS:
     CityGMLs['LOD1_0_HAvg'] = createCityGML('LOD1_0_HAvg')
-    CityGMLs['LOD1_0_HAvg_solid'] = createCityGML('LOD1_0_HAvg_solid')
-    CityGMLs['LOD1_0_HAvg_semantics'] = createCityGML('LOD1_0_HAvg_semantics')
+    if SOLIDS:
+        CityGMLs['LOD1_0_HAvg_solid'] = createCityGML('LOD1_0_HAvg_solid')
+        CityGMLs['LOD1_0_HAvg_semantics'] = createCityGML('LOD1_0_HAvg_semantics')
 
     CityGMLs['LOD1_0_HMax'] = createCityGML('LOD1_0_HMax')
-    CityGMLs['LOD1_0_HMax_solid'] = createCityGML('LOD1_0_HMax_solid')
-    CityGMLs['LOD1_0_HMax_semantics'] = createCityGML('LOD1_0_HMax_semantics')
+    if SOLIDS:
+        CityGMLs['LOD1_0_HMax_solid'] = createCityGML('LOD1_0_HMax_solid')
+        CityGMLs['LOD1_0_HMax_semantics'] = createCityGML('LOD1_0_HMax_semantics')
 
     CityGMLs['LOD1_0_HMedian'] = createCityGML('LOD1_0_HMedian')
-    CityGMLs['LOD1_0_HMedian_solid'] = createCityGML('LOD1_0_HMedian_solid')
-    CityGMLs['LOD1_0_HMedian_semantics'] = createCityGML('LOD1_0_HMedian_semantics')
+    if SOLIDS:
+        CityGMLs['LOD1_0_HMedian_solid'] = createCityGML('LOD1_0_HMedian_solid')
+        CityGMLs['LOD1_0_HMedian_semantics'] = createCityGML('LOD1_0_HMedian_semantics')
 
 #-- LOD1.1
 if VARIANTS:
@@ -4828,6 +4831,21 @@ if SOLIDS:
     CityGMLs['LOD2_3_F0_solid'] = createCityGML('LOD2_3_F0_solid')
     if VARIANTS:
         CityGMLs['LOD2_3_Fd_solid'] = createCityGML('LOD2_3_Fd_solid')
+
+#-- LOD2.3 with dormers
+if VARIANTS:
+    CityGMLs['LOD2_3_F0_with_dormers'] = createCityGML('LOD2_3_F0_with_dormers')
+    CityGMLs['LOD2_3_Fd_with_dormers'] = createCityGML('LOD2_3_Fd_with_dormers')
+    #-- Non semantic version
+    if SOLIDS:
+        CityGMLs['LOD2_3_F0_S0_with_dormers'] = createCityGML('LOD2_3_F0_S0_with_dormers')
+    if VARIANTS:
+        CityGMLs['LOD2_3_Fd_S0_with_dormers'] = createCityGML('LOD2_3_Fd_S0_with_dormers')
+    #--Solids
+    if SOLIDS:
+        CityGMLs['LOD2_3_F0_solid_with_dormers'] = createCityGML('LOD2_3_F0_solid_with_dormers')
+        if VARIANTS:
+            CityGMLs['LOD2_3_Fd_solid_with_dormers'] = createCityGML('LOD2_3_Fd_solid_with_dormers')       
 
 #--LOD3 variants
 #--Normal LOD3 with flat openings
@@ -5581,19 +5599,6 @@ for b in buildings:
             CityGMLbuildingLOD2Solid(CityGMLs["LOD2_1_F1_solid"], ID, attributes, adjorigin, adjxsize, adjysize, adjzsize, adjh, roofType, adjr, None, 'solid', '2.1', aux, buildingpart)
             CityGMLbuildingLOD2Solid(CityGMLs["LOD2_1_Fd_solid"], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, adjr_offset, None, 'solid', '2.1', aux, buildingpart, True)
 
-    #-LOD2.3
-    CityGMLbuildingLOD2Semantics(CityGMLs["LOD2_3_F0"], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, r, ovh, '2.2', aux, buildingpart)
-
-    if VARIANTS:
-        CityGMLbuildingLOD2Semantics(CityGMLs["LOD2_3_Fd"], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, adjr_offset, [offset, offset], '2.2', aux, buildingpart, True)
-        if SOLIDS:
-            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_F0_S0"], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, r, ovh, 'brep', '2.2', aux, buildingpart)
-        if VARIANTS and SOLIDS:
-            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_Fd_S0"], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, adjr_offset, [offset, offset], 'brep', '2.2', aux, buildingpart, True)
-        if SOLIDS:
-            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_F0_solid"], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, r, None, 'solid', '2.2', aux, buildingpart)
-        if VARIANTS and SOLIDS:
-            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_Fd_solid"], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, adjr_offset, [offset, offset], 'solid', '2.2', aux, buildingpart, True)
 
     #-LOD2.2
     #-Realised with LOD3 functions for programming reasons
@@ -5609,6 +5614,35 @@ for b in buildings:
             CityGMLbuildingLOD3Solid(CityGMLs['LOD2_2_F1_S0'], ID, attributes, adjorigin, adjxsize, adjysize, adjzsize, adjh, roofType, [0.0, 0.0], adjr, None, None, dormers_ovh, None, None, None, additional, 'brep', aux, buildingpart)
             CityGMLbuildingLOD3Solid(CityGMLs['LOD2_2_Fd_solid'], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, [offset, offset], adjr_offset, None, None, dormers_offset, None, None, None, additional, 'solid', aux, buildingpart)
             CityGMLbuildingLOD3Solid(CityGMLs['LOD2_2_Fd_S0'], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, [offset, offset], adjr_offset, None, None, dormers_offset, None, None, None, additional, 'brep', aux, buildingpart)
+
+    #-LOD2.3
+    CityGMLbuildingLOD2Semantics(CityGMLs["LOD2_3_F0"], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, r, ovh, '2.3', aux, buildingpart)
+
+    if VARIANTS:
+        CityGMLbuildingLOD2Semantics(CityGMLs["LOD2_3_Fd"], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, adjr_offset, [offset, offset], '2.3', aux, buildingpart, True)
+        if SOLIDS:
+            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_F0_S0"], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, r, ovh, 'brep', '2.3', aux, buildingpart)
+        if VARIANTS and SOLIDS:
+            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_Fd_S0"], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, adjr_offset, [offset, offset], 'brep', '2.3', aux, buildingpart, True)
+        if SOLIDS:
+            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_F0_solid"], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, r, None, 'solid', '2.3', aux, buildingpart)
+        if VARIANTS and SOLIDS:
+            CityGMLbuildingLOD2Solid(CityGMLs["LOD2_3_Fd_solid"], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, adjr_offset, [offset, offset], 'solid', '2.3', aux, buildingpart, True)
+
+
+    #-LOD2.3 with dormers
+    #-Realised with LOD3 functions for programming reasons
+    if VARIANTS:
+        CityGMLbuildingLOD3Semantics(CityGMLs['LOD2_3_F0_with_dormers'], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, ovh, r, None, None, dormers, None, None, None, 1, aux, buildingpart, True)
+        if SOLIDS:
+            CityGMLbuildingLOD3Solid(CityGMLs['LOD2_3_F0_solid_with_dormers'], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, ovh, r, None, None, dormers, None, None, None, additional, 'solid', aux, buildingpart)
+            CityGMLbuildingLOD3Solid(CityGMLs['LOD2_3_F0_S0_with_dormers'], ID, attributes, origin_coords, xsize, ysize, zsize, h, roofType, ovh, r, None, None, dormers, None, None, None, additional, 'brep', aux, buildingpart)
+        CityGMLbuildingLOD3Semantics(CityGMLs['LOD2_3_Fd_with_dormers'], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, [offset, offset], adjr_offset, None, None, dormers_offset, None, None, None, 1, aux, buildingpart, True)
+        if SOLIDS:
+            CityGMLbuildingLOD3Solid(CityGMLs['LOD2_3_Fd_solid_with_dormers'], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, [offset, offset], adjr_offset, None, None, dormers_offset, None, None, None, additional, 'solid', aux, buildingpart)
+            CityGMLbuildingLOD3Solid(CityGMLs['LOD2_3_Fd_S0_with_dormers'], ID, attributes, adjorigin_offset, adjxsize_offset, adjysize_offset, adjzsize_offset, adjh_offset, roofType, [offset, offset], adjr_offset, None, None, dormers_offset, None, None, None, additional, 'brep', aux, buildingpart)
+
+
 
     #-- LOD3 variants
     #-- LOD3.0
