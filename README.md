@@ -6,10 +6,9 @@ A procedural modelling engine for generating buildings and other features in Cit
 ![Overview](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-interior.png)
 
 
-# Datasets
+# Ready to use datasets
 
-If you are interested only in the datasets, visit my personal webpage to download a prepared collection
- of datasets: [http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
+If you are interested only in the datasets, without the need to run the code, please visit my personal webpage to download a prepared collection of datasets: [http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
 
 # Introduction
 
@@ -160,7 +159,7 @@ Faculty of Architecture and the Built Environment
 
 Delft University of Technology
 
-fbiljecki at gmail dot com
+email: fbiljecki at gmail dot com
 
 [Personal webpage](http://3dgeoinfo.bk.tudelft.nl/biljecki/)
 
