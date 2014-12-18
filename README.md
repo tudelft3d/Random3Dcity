@@ -33,6 +33,17 @@ Further, I will be very happy to hear if you find this tool useful for your work
 
 Coming soon. Journal paper under submission.
 
+System requirements
+---------------------
+
+Python packages:
+
++ [Numpy](http://docs.scipy.org/doc/numpy/user/install.html) (likely already on your system)
++ [lxml](http://lxml.de)
+
+### OS and Python version
+  
+The software has been developed on Mac OSX in Python 2.7, and has not been tested with other configurations. Hence, it is possible that some of the functions will not work on Windows and on Python 3.
 
 ## Features and technical details
 
@@ -135,6 +146,18 @@ The speed mainly depends on the invoked options. With all the options the engine
 
 Known issues
 ---------------------
+
+### CityGML issues
+
++ The output files are stored in CityGML 2.0. Output in the legacy versions 0.4 and 1.0 is not available.
++ There are multiple MultiSurface instances within the same thematic boundary (boundedBy), which might cause problems for some software packages. This will be fixed in the next version.
+
+### Python issues
+
++ This software has been programmed with Python 2.7. Version 3 is not supported.
+
+### Running issues
+
 The `generateCityGML.py` program has been known to crash in two cases:
 
 + It runs out of memory if too many buildings are attempted to be generated in CityGML. Reduce the number of buildings and/or their variants (e.g. disable the generation of solids).
