@@ -32,7 +32,7 @@ This software is free to use. However, you are kindly requested to acknowledge t
 Further, I will be very happy to hear if you find this tool useful for your workflow. If you find it useful and/or have suggestions for its improvement, please let me know. Further, I am maintaining a list of users that I notify of corrections and updates.
 
 
-## Academic reference with a detailed methodology
+### Academic reference with a detailed methodology
 
 Coming soon. Journal paper under submission.
 
