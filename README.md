@@ -6,11 +6,13 @@ A procedural modelling engine for generating buildings and other features in Cit
 ![Overview](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-interior.png)
 
 
-# Ready to use datasets
+Ready to use datasets
+---------------------
 
 If you are interested only in the datasets, without the need to run the code, please visit my personal webpage to download a prepared collection of datasets: [http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
 
-# Introduction
+Introduction
+---------------------
 
 This experimental software prototype was developed as a part of my [PhD research](http://3dgeoinfo.bk.tudelft.nl/biljecki/phd.html), and it has been designed and developed from scratch.
 
@@ -21,7 +23,8 @@ The engine is composed of two modules. The first one is procedural: it randomly 
 The second part of the engine reads this data and constructs CityGML data in multiple LODs.
 
 
-## Conditions for use
+Conditions for use
+---------------------
 
 
 This software is free to use. However, you are kindly requested to acknowledge the use of this software by citing it in a research paper you are writing, reports, and/or other applicable materials; and mentioning the [3D Geoinformation group at the Delft University of Technology](http://3dgeoinfo.bk.tudelft.nl/). A research paper is under submission, hence please contact me to give you a reference to cite.
@@ -187,7 +190,8 @@ email: fbiljecki at gmail dot com
 [Personal webpage](http://3dgeoinfo.bk.tudelft.nl/biljecki/)
 
 
-# Acknowledgments
+Acknowledgments
+---------------------
 
 + This research is supported by the Dutch Technology Foundation STW, which is part of the Netherlands Organisation for Scientific Research (NWO), and which is partly funded by the Ministry of Economic Affairs. (Project code: 11300)
 
