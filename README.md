@@ -3,7 +3,7 @@ Random3Dcity
 
 A procedural modelling engine for generating buildings and other features in CityGML in multiple levels of detail (LOD).
 
-![Overview](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-interior.png)
+![Overview](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-interior.png)
 
 
 Ready to use datasets
@@ -54,38 +54,38 @@ The software has been developed on Mac OSX in Python 2.7, and has not been teste
 
 The engine supports five types of roofs: flat, gabled, hipped, pyramidal, and shed. Further, it supports also building parts such as garages and alcoves.
 
-![Roofs](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-roofTypes.png)
+![Roofs](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-roofTypes.png)
 
 
 ### 16 Levels of detail
 
 The engine supports generating data in 16 levels of detail. The following composite render shows an example of four LODs:
 
-![LOD-composite](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-LOD-composite.png)
+![LOD-composite](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-LOD-composite.png)
 
 The following image shows the specification of our novel LOD specification ("Delft LODs") according to which the models are generated. This specification will be published in details.
 
-![LOD-refined-specification](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-refinedLODs_github.png)
+![LOD-refined-specification](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-refinedLODs_github.png)
 
 ### Geometric references
 
 Besides the LODs, the engine generates multiple representations according to geometric references within LODs, e.g. an LOD1 with varying heights of the top surface (height at the eaves, at the half of the roof, etc.)
 
-![Geometric references](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-LOD1cb.png)
+![Geometric references](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-LOD1cb.png)
 
 
 ### Solids
 
 Each representation is constructed its corresponding solid.
 
-![Solids](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-assemblingSolid.png)
+![Solids](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-assemblingSolid.png)
 
 
 ### Vegetation and streets
 
 An experimental feature is the generation of vegetation and streets.
 
-![Other-features](http://3dgeoinfo.bk.tudelft.nl/biljecki/code/img/R3-roads.png)
+![Other-features](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-roads.png)
 
 
 ### Interior of buildings
@@ -172,7 +172,7 @@ Special datasets
 
 I have prepared a number of intentionally impaired datasets suited for different types of experiments, such as overlapping buildings and simulated geometric errors. For the full list visit the [data page](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
 
-![Intentional errors](http://3dgeoinfo.bk.tudelft.nl/biljecki/random3dcity/errors/overlapping/overlapping.png)
+![Intentional errors](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-overlapping.png)
 
 
 Contact me for questions and feedback
