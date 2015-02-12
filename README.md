@@ -65,7 +65,7 @@ The engine supports generating data in 16 levels of detail. The following compos
 
 The following image shows the specification of our novel LOD specification ("Delft LODs") according to which the models are generated. This specification will be published in details.
 
-![LOD-refined-specification](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-refinedLODs_github.png)
+![LOD-refined-specification](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-refinedLODs.png)
 
 ### Geometric references
 
