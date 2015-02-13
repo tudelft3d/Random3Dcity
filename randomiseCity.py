@@ -337,7 +337,7 @@ def buildingParametres(specifications, i, n, crs = None):
     #-- Door
     #-- On which side of the building to put the door?
     if bpart:
-        doorSide = range(0, 4)
+        doorSide = list(range(0, 4))
         doorSide.pop(bpartSide)
         doorSide = random.choice(doorSide)
     else:
@@ -427,10 +427,13 @@ def buildingParametres(specifications, i, n, crs = None):
             pass
         elif selection == 1 and rtype != 'Flat': #-- Disregard flat roofs
             #-- Only if height from the eaves to the top is >3.0 m
-            if h > 3.0:
+            if float(h.text) > 3.0:
                 #-- Dormer generation
-                if (rtype == 'Hipped' or rtype == 'Pyramidal') and xs > 4:
-                    dormers = dormer(rtype, xs, ys, zs, r)
+                if (rtype == 'Hipped' or rtype == 'Pyramidal'):
+                    if xs > 4:
+                        dormers = dormer(rtype, xs, ys, zs, rwidth)
+                    else:
+                        dormers = []
                 else:
                     dormers = dormer(rtype, xs, ys, zs)
                 #-- Dormer storage
@@ -453,30 +456,31 @@ def buildingParametres(specifications, i, n, crs = None):
 
         #-- Let's put a roof window instead
         elif selection == 2:
+            rfwindows = None
             if rtype == 'Hipped' or rtype == 'Pyramidal':
-                if h > 3.0:
-                    rfwindows = roofwindow(rtype, xs, ys, zs, h, r)
+                if float(h.text) > 3.0:
+                    rfwindows = roofwindow(rtype, xs, ys, zs, h, rwidth)
             elif rtype == 'Gabled':
-                if h > 3.0:
+                if float(h.text) > 3.0:
                     rfwindows = roofwindow(rtype, xs, ys, zs, h)
             else:
                 rfwindows = roofwindow(rtype, xs, ys, zs)
-            if len(rfwindows) > 0:
+            if rfwindows is not None and len(rfwindows) > 0:
                 rfwindowsXML = etree.SubElement(roof, "roofWindows")
-            for rfw in rfwindows:
-                currRfWin = etree.SubElement(rfwindowsXML, "roofWindow")
-                currRfWinSide = etree.SubElement(currRfWin, "side")
-                currRfWinSide.text = str(rfw['side'])
-                currRfWinSize = etree.SubElement(currRfWin, "size")
-                currRfWinWidth = etree.SubElement(currRfWinSize, "width")
-                currRfWinWidth.text = str(rfw['rfwinWidth'])
-                currRfWinHeight = etree.SubElement(currRfWinSize, "height")
-                currRfWinHeight.text = str(rfw['rfwinHeight'])                
-                currRfWinOrigin = etree.SubElement(currRfWin, "origin")
-                currRfWinOriginX = etree.SubElement(currRfWinOrigin, "x")
-                currRfWinOriginX.text = str(rfw['rfwinOriginX'])
-                currRfWinOriginY = etree.SubElement(currRfWinOrigin, "y")        
-                currRfWinOriginY.text = str(rfw['rfwinOriginY']) 
+                for rfw in rfwindows:
+                    currRfWin = etree.SubElement(rfwindowsXML, "roofWindow")
+                    currRfWinSide = etree.SubElement(currRfWin, "side")
+                    currRfWinSide.text = str(rfw['side'])
+                    currRfWinSize = etree.SubElement(currRfWin, "size")
+                    currRfWinWidth = etree.SubElement(currRfWinSize, "width")
+                    currRfWinWidth.text = str(rfw['rfwinWidth'])
+                    currRfWinHeight = etree.SubElement(currRfWinSize, "height")
+                    currRfWinHeight.text = str(rfw['rfwinHeight'])                
+                    currRfWinOrigin = etree.SubElement(currRfWin, "origin")
+                    currRfWinOriginX = etree.SubElement(currRfWinOrigin, "x")
+                    currRfWinOriginX.text = str(rfw['rfwinOriginX'])
+                    currRfWinOriginY = etree.SubElement(currRfWinOrigin, "y")        
+                    currRfWinOriginY.text = str(rfw['rfwinOriginY']) 
         else:
             pass
 
@@ -556,7 +560,7 @@ def buildingParametres(specifications, i, n, crs = None):
     #-- Return the position of the building in the grid
     return o[3]
 
-def dormer(rtype, xs, ys, zs, r = None):
+def dormer(rtype, xs, ys, zs, r=None):
     """Randomise a dormer."""
     dormers = []
     if rtype == 'Gabled':
@@ -623,7 +627,6 @@ def dormer(rtype, xs, ys, zs, r = None):
             thisdormer2 = {'dormerWidth' : dormerWidth, 'dormerHeight' : dormerHeight, 'dormerOriginX': dormerOriginX, 'dormerOriginY' : dormerOriginY, 'side' : 3}            
             dormers.append(thisdormer1)
             dormers.append(thisdormer2)
-
         if r > 1 and xs > 4:
             if xs < 6:
                 nodormers = 1
@@ -648,7 +651,7 @@ def dormer(rtype, xs, ys, zs, r = None):
 
     return dormers
 
-def roofwindow(rtype, xs, ys, zs, h = None, r = None):
+def roofwindow(rtype, xs, ys, zs, h=None, r=None):
     """Procedural modelling of roof windows, similar as to dormers."""
     roofwindow = []
     if rtype == 'Gabled':
@@ -656,7 +659,7 @@ def roofwindow(rtype, xs, ys, zs, h = None, r = None):
             norfwins = 1
         else:
             norfwins = random.randint(1, 2)
-        if h > 3.0:
+        if float(h.text) > 3.0:
             rfwinWidth = round(random.uniform(.8,1.3), 2)
             rfwinHeight = round(random.uniform(1,1.2), 2)  
             rfwinOriginY = round(random.uniform(0.1, 1.0), 2) 
@@ -852,7 +855,7 @@ def randomwindow(side, fl, xs, ys, zs, floorHeight, fixed=None):
             elif xs > 3:
                 woriginY = (fl-1) * 3 + round(random.uniform(1,1.5), 2)
                 nowindows = random.randint(1, 3)
-                print nowindows
+                print(nowindows)
                 for i in range(1, nowindows+1):
                     if i == 0:
                         continue
@@ -882,7 +885,7 @@ def randomwindow(side, fl, xs, ys, zs, floorHeight, fixed=None):
             elif ys > 3:
                 woriginY = (fl-1) * 3 + round(random.uniform(1,1.5), 2)
                 nowindows = random.randint(1, 3)
-                print nowindows
+                print(nowindows)
                 for i in range(1, nowindows+1):
                     if i == 0:
                         continue               
@@ -890,7 +893,7 @@ def randomwindow(side, fl, xs, ys, zs, floorHeight, fixed=None):
                     w['width'] = round(random.uniform(0.3,1.0), 2)
                     w['height'] = round(random.uniform(0.3,1.0), 2)
                     w['originX'] = round(random.uniform(0.1 + (i-1) * (ys/float(nowindows)), i*(ys/float(nowindows))-w['width']-0.1), 2)
-                    print i, w['originX']
+                    print(i, w['originX'])
                     w['originY'] = woriginY
                     w['side'] = str(side)
                     res.append(w)
@@ -993,7 +996,7 @@ if VEGETATION:
     rvgs = 0.05
     nvgs = int(round(rvgs * float(n), 0))
     vgcells = []
-    allcells = range(n)
+    allcells = list(range(n))
     for vgs in range(0, nvgs):
         vgcells.append(random.choice(allcells))
 else:
@@ -1012,8 +1015,9 @@ buildings = etree.tostring(bspecs, pretty_print=True)
 SpecFile = open(fname, "w")
 #-- Add the header to be politically correct
 SpecFile.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n")
-SpecFile.write("<!-- Generated by Random3Dcity (http://github.com/tudelft3d/Random3Dcity), a tool developed by Filip Biljecki at TU Delft. Version: 2014-12-07. -->\n")
-SpecFile.write(buildings)
+SpecFile.write("<!-- Generated by Random3Dcity (http://github.com/tudelft3d/Random3Dcity), a tool developed by Filip Biljecki at TU Delft. Version: 2015-02-13. -->\n")
+#SpecFile.write(buildings)
+SpecFile.write(buildings.decode('utf-8'))
 SpecFile.close()
 #-- Done
-print 'XML with buildings written in file', fname
+print('XML with buildings written in file', fname)

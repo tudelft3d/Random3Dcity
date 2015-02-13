@@ -44,9 +44,13 @@ Python packages:
 + [Numpy](http://docs.scipy.org/doc/numpy/user/install.html) (likely already on your system)
 + [lxml](http://lxml.de)
 
+If not on your system please install them.
+
 ### OS and Python version
   
-The software has been developed on Mac OSX in Python 2.7, and has not been tested with other configurations. Hence, it is possible that some of the functions will not work on Windows and on Python 3.
+Both Python 2 and Python 3 are supported.
+
+The software has been developed and tested on Mac OSX, and has not been tested with other configurations. Hence, it is possible that some of the functions will not work on Windows.
 
 ## Features and technical details
 
@@ -155,10 +159,6 @@ Known issues
 + The output files are stored in CityGML 2.0. Output in the legacy versions 0.4 and 1.0 is not available.
 + There are multiple MultiSurface instances within the same thematic boundary (boundedBy), which might cause problems for some software packages. This will be fixed in the next version.
 
-### Python issues
-
-+ This software has been programmed with Python 2.7. Version 3 is not supported.
-
 ### Running issues
 
 The `generateCityGML.py` program has been known to crash in two cases:
@@ -196,3 +196,5 @@ Acknowledgments
 + This research is supported by the Dutch Technology Foundation STW, which is part of the Netherlands Organisation for Scientific Research (NWO), and which is partly funded by the Ministry of Economic Affairs. (Project code: 11300)
 
 + People who gave suggestions and reported errors
+
++ Mickaël Brasebin (IGN) for the suggestions to make the code compatible with Python3.
