@@ -5731,9 +5731,12 @@ if VEGETATION:
 #-- Write to file(s)
 print("\nGenerated", len(CityGMLs), "CityGML file(s) in the memory. Now writing to disk...")
 filecounter = 0
+fish = ProgressFish(total=len(CityGMLs))
 for element in CityGMLs:
+    #-- Report on the progress
+    fish.animate(amount=filecounter+1)
     filecounter += 1
-    print(filecounter, "...", end=' ')
+    # print(filecounter, "...", end=' ')
     storeCityGML(element)
 
-print("\nWritten the CityGML file(s).")
+print("\nWritten the CityGML file(s). Cleaning the memory...")
