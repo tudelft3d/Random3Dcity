@@ -4896,7 +4896,7 @@ print("Constructing buildings and other city objects...")
 fish = ProgressFish(total=len(buildings))
 for b in buildings:
 	#-- Report on the progress
-    fish.animate(amount=buildingcounter)
+    fish.animate(amount=buildingcounter+1)
     buildingcounter += 1
     #-- Building UUID
     ID = b.attrib['ID']
