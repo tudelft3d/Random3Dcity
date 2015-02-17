@@ -41,6 +41,7 @@ import numpy
 import math
 import uuid
 import copy
+from fish import ProgressFish
 
 
 #-- Parse command-line arguments
@@ -4892,11 +4893,11 @@ if VEGETATION:
 #-- Iterate the list of buildings in the XML and extract their data
 buildingcounter = 0
 print("Constructing buildings and other city objects...")
+fish = ProgressFish(total=len(buildings))
 for b in buildings:
+	#-- Report on the progress
+    fish.animate(amount=buildingcounter)
     buildingcounter += 1
-    if buildingcounter % 100 == 0:
-        print(buildingcounter, "...", end=" ")
-
     #-- Building UUID
     ID = b.attrib['ID']
     #-- Origin in (x,y,z) as a list of floats
