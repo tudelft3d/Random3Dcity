@@ -3980,15 +3980,19 @@ def CityGMLbuildingInteriorLOD2(CityModel, ID, attributes, o, x, y, z, h, floors
     Ya = o[1] + wallThickness
     Yb = o[1] + y - wallThickness
 
+    #-- XML tree
+    lod2Solid = etree.SubElement(bldg, "{%s}lod2Solid" % ns_bldg)
+    MultiSolid = etree.SubElement(lod2Solid, "{%s}MultiSolid" % ns_gml)
+
     #-- Construct a solid for each floor
     for floor in range(1, int(floors) + 1):
         #-- Floor elevation
         fel = (floor - 1) * floorHeight + 0.5*joist
         #-- Ceiling elevation
         cel = floor * floorHeight - 0.5*joist
-        #-- XML tree
-        lod2Solid = etree.SubElement(bldg, "{%s}lod2Solid" % ns_bldg)
-        Solid = etree.SubElement(lod2Solid, "{%s}Solid" % ns_gml)
+
+        #-- Add solids of the multisolid
+        Solid = etree.SubElement(MultiSolid, "{%s}Solid" % ns_gml)
         if ASSIGNID:
             Solid.attrib['{%s}id' % ns_gml] = str(uuid.uuid4())
         exterior = etree.SubElement(Solid, "{%s}exterior" % ns_gml)
@@ -4026,7 +4030,7 @@ def CityGMLbuildingInteriorLOD2(CityModel, ID, attributes, o, x, y, z, h, floors
                     addsurface(False, CompositeSurface, gtop)
                     top = "%s %s %s %s %s %s %s %s %s" % (p0C, p1C, bp[4], bp[5], bp[6], bp[7], p2C, p3C, p0C)
                 elif buildingpart['type'] == 'Garage':
-                    GarageSolid = etree.SubElement(lod2Solid, "{%s}Solid" % ns_gml)
+                    GarageSolid = etree.SubElement(MultiSolid, "{%s}Solid" % ns_gml)
                     GarageExterior = etree.SubElement(GarageSolid, "{%s}exterior" % ns_gml)
                     GarageCompositeSurface = etree.SubElement(GarageExterior, "{%s}CompositeSurface" % ns_gml)
                     E = "%s %s %s %s %s" % (p1F, p2F, p2C, p1C, p1F)
@@ -4122,8 +4126,8 @@ def CityGMLbuildingInteriorLOD2(CityModel, ID, attributes, o, x, y, z, h, floors
 
         cel = float(r[0][2]) - topThickness
         #-- XML tree
-        lod2Solid = etree.SubElement(bldg, "{%s}lod2Solid" % ns_bldg)
-        Solid = etree.SubElement(lod2Solid, "{%s}Solid" % ns_gml)
+        # lod2Solid = etree.SubElement(bldg, "{%s}lod2Solid" % ns_bldg)
+        Solid = etree.SubElement(MultiSolid, "{%s}Solid" % ns_gml)
         if ASSIGNID:
             Solid.attrib['{%s}id' % ns_gml] = str(uuid.uuid4())
         exterior = etree.SubElement(Solid, "{%s}exterior" % ns_gml)
@@ -4945,7 +4949,7 @@ for b in buildings:
     attrs = b.findall('properties')[0]
     attributes['yearOfConstruction'] = str(attrs.findall('yearOfConstruction')[0].text)
     attributes['function'] = str(attrs.findall('usage')[0].text)
-    attributes['storeysAboveGround'] = str(floors)
+    attributes['storeysAboveGround'] = str(int(floors))
 
     #-- Building part
     if BUILDINGPARTS:
