@@ -43,6 +43,7 @@ Python packages:
 
 + [Numpy](http://docs.scipy.org/doc/numpy/user/install.html) (likely already on your system)
 + [lxml](http://lxml.de)
++ [Fish](https://pypi.python.org/pypi/fish/)
 
 If not on your system please install them.
 
