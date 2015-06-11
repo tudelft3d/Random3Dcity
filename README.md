@@ -27,7 +27,22 @@ Conditions for use
 ---------------------
 
 
-This software is free to use. However, you are kindly requested to acknowledge the use of this software by citing it in a research paper you are writing, reports, and/or other applicable materials; and mentioning the [3D Geoinformation group at the Delft University of Technology](http://3dgeoinfo.bk.tudelft.nl/). A research paper is under submission, hence please contact me to give you a reference to cite.
+This software is free to use. However, you are kindly requested to acknowledge the use of this software by citing it in a research paper you are writing, reports, and/or other applicable materials; and mentioning the [3D Geoinformation group at the Delft University of Technology](http://3dgeoinfo.bk.tudelft.nl/). If you are using the engine and/or the data in a research, please cite the following paper:
+
+    @inproceedings{Biljecki:2014ub,
+        author = {Biljecki, Filip and Ledoux, Hugo and Stoter, Jantien},
+        title = {{Error propagation in the computation of volumes in 3D city models with the Monte Carlo method}},
+        booktitle = {ISPRS Annals. Proceedings of the ISPRS/IGU Joint International Conference on Geospatial Theory, Processing, Modelling and Applications},
+        year = {2014},
+        editor = {Li, S and Dragicevic, S},
+        pages = {31--39},
+        address = {Toronto, Canada},
+        month = oct
+    }
+
+
+A journal paper is under submission, so please contact me about the updated reference if you plan to submit your paper later.
+
 
 Further, I will be very happy to hear if you find this tool useful for your workflow. If you find it useful and/or have suggestions for its improvement, please let me know. Further, I am maintaining a list of users that I notify of corrections and updates.
 
@@ -70,7 +85,7 @@ The engine supports generating data in 16 levels of detail. The following compos
 
 The following image shows the specification of our novel LOD specification ("Delft LODs") according to which the models are generated. This specification will be published in details.
 
-![LOD-refined-specification](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-refinedLODs.png)
+![LOD-refined-specification](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-refinedLODs-cyan.png)
 
 ### Geometric references
 
