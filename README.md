@@ -3,22 +3,22 @@ Random3Dcity
 
 A procedural modelling engine for generating buildings and other features in CityGML in multiple levels of detail (LOD).
 
-![Overview](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-interior.png)
+![Overview](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-interior.png)
 
 
 Ready to use datasets
 ---------------------
 
-If you are interested only in the datasets, without the need to run the code, please visit my personal webpage to download a prepared collection of datasets: [http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
+If you are interested only in the datasets, without the need to run the code, please visit my personal webpage to download a prepared collection of datasets: [https://3d.bk.tudelft.nl/biljecki/Random3Dcity.html](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
 
 Introduction
 ---------------------
 
-This experimental software prototype was developed as a part of my [PhD research](http://3dgeoinfo.bk.tudelft.nl/biljecki/phd.html), and it has been designed and developed from scratch.
+This experimental software prototype was developed as a part of my [PhD research](http://filipbiljecki.com/research/phd.html), and it has been designed and developed from scratch.
 
 Procedural modelling engines natively supporting CityGML and designed for generating semantically structured 3D city models in multiple LODs are not available. This project presents an effort to fill this gap.
 
-The engine is composed of two modules. The first one is procedural: it randomly generates buildings and their elements according to a comprehensive set of rules and constraints. The buildings are realised through parametres which are stored in an XML form.
+The engine is composed of two modules. The first one is procedural: it randomly generates buildings and their elements according to a set of rules and constraints. The buildings are realised through parameters which are stored in an XML form.
 
 The second part of the engine reads this data and constructs CityGML data in multiple LODs.
 
@@ -26,8 +26,7 @@ The second part of the engine reads this data and constructs CityGML data in mul
 Conditions for use
 ---------------------
 
-
-This software is free to use. However, you are kindly requested to acknowledge the use of this software by citing it in a research paper you are writing, reports, and/or other applicable materials; and mentioning the [3D Geoinformation group at the Delft University of Technology](http://3dgeoinfo.bk.tudelft.nl/). If you are using the engine and/or the data in a research, please cite the following paper:
+This software is free to use. You are kindly requested to acknowledge the use of this software by citing it in a research paper you are writing, reports, and/or other applicable materials; and mentioning the [3D Geoinformation group at the Delft University of Technology](https://3d.bk.tudelft.nl/). If you are using the engine and/or the data in a research, please cite the following paper:
 
     @inproceedings{Biljecki:2014ub,
         author = {Biljecki, Filip and Ledoux, Hugo and Stoter, Jantien},
@@ -43,13 +42,7 @@ This software is free to use. However, you are kindly requested to acknowledge t
 
 A journal paper is under submission, so please contact me about the updated reference if you plan to submit your paper later.
 
-
 Further, I will be very happy to hear if you find this tool useful for your workflow. If you find it useful and/or have suggestions for its improvement, please let me know. Further, I am maintaining a list of users that I notify of corrections and updates.
-
-
-### Academic reference with a detailed methodology
-
-Coming soon. Journal paper under submission.
 
 System requirements
 ---------------------
@@ -74,38 +67,38 @@ The software has been developed and tested on Mac OSX, and has not been tested w
 
 The engine supports five types of roofs: flat, gabled, hipped, pyramidal, and shed. Further, it supports also building parts such as garages and alcoves.
 
-![Roofs](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-roofTypes.png)
+![Roofs](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-roofTypes.png)
 
 
 ### 16 Levels of detail
 
 The engine supports generating data in 16 levels of detail. The following composite render shows an example of four LODs:
 
-![LOD-composite](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-LOD-composite.png)
+![LOD-composite](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-LOD-composite.png)
 
 The following image shows the specification of our novel LOD specification ("Delft LODs") according to which the models are generated. This specification will be published in details.
 
-![LOD-refined-specification](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-refinedLODs-cyan.png)
+![LOD-refined-specification](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-refinedLODs-cyan.png)
 
 ### Geometric references
 
 Besides the LODs, the engine generates multiple representations according to geometric references within LODs, e.g. an LOD1 with varying heights of the top surface (height at the eaves, at the half of the roof, etc.)
 
-![Geometric references](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-LOD1cb.png)
+![Geometric references](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-LOD1cb.png)
 
 
 ### Solids
 
 Each representation is constructed its corresponding solid.
 
-![Solids](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-assemblingSolid.png)
+![Solids](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-assemblingSolid.png)
 
 
 ### Vegetation and streets
 
 An experimental feature is the generation of vegetation and streets.
 
-![Other-features](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-roads.png)
+![Other-features](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-roads.png)
 
 
 ### Interior of buildings
@@ -115,7 +108,7 @@ A basic interior of buildings in three LODs may be generated: see the header in 
 Documented uses
 ---------------------
 
-Besides my [PhD](http://3dgeoinfo.bk.tudelft.nl/biljecki/phd.html) in which I did a lot of experiments and benchmarking with CityGML data, the engine has been used for testing validation and repair software, and other purposes such as error propagation. For the full showcase visit the [data page](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html).
+Besides my [PhD](http://filipbiljecki.com/research/phd.html) in which I did a lot of experiments and benchmarking with CityGML data, the engine has been used for testing validation and repair software, and other purposes such as error propagation. For the full showcase visit the [data page](http://3d.bk.tudelft.nl/biljecki/Random3Dcity.html).
 
 
 Usage and options
@@ -129,14 +122,15 @@ To generate buildings run
 python randomiseCity.py -o /path/to/the/building/file.xml -n 4000
 ```
 
-where `n` is the number of buildings to be generated. If you don't specify the number of buildings, by default the program will generate 1000 buildings.
+where `n` is the number of buildings to be generated. If you don't specify the number of buildings, by default the program will generate 1000 buildings. Please use absolute paths.
 
 To realise these buildings as a 3D city model in CityGML in multiple levels of detail run:
 
 ```
 python generateCityGML.py -i /path/to/the/building/file.xml -o /path/to/CityGML/directory/
 ```
-Don't forget to put the `/` at the end of the directory.
+
+Don't forget to put the `/` at the end of the directory. Again, please use absolute paths.
 
 ### Rotation
 
@@ -144,7 +138,7 @@ If you want to have the buildings rotated randomly, in both commands toggle the 
 
 ### Building parts
 
-Building parts are generated with the flag `-p 1`.
+Building parts (garages, warehouses, alcoves) are generated with the flag `-p 1`.
 
 ### Vegetation and street network
 
@@ -160,42 +154,45 @@ It is possible to generate an UUID for each <gml:Polygon> with the option `-id 1
 
 ### Coordinate system
 
-If you run the building randomiser with the option `-c 1`, the buildings will be placed in the Dutch coordinate system (RD new), somewhere in the Nordoostpolder in the Netherlands. You can easily customise this in the code.
+By default, buildings are placed in a local coordinate system. If you run the building randomiser with the option `-c 1`, the buildings will be placed in the Dutch coordinate system (RD new), somewhere in the Nordoostpolder in the Netherlands. You can easily customise this in the code. You don't have to toggle `-c 1` in the second script (`generateCityGML.py`).
 
 Performance
 ---------------------
 
-The speed mainly depends on the invoked options. With all the options the engine generates around 100 buildings per minute. The computational complexity is not strictly linear, and a high number of buildings (>20000) will likely eat all of your RAM making the process slower.
+The speed mainly depends on the invoked options. With all the options the engine generates around 100 buildings per minute. The computational complexity is not strictly linear, and a high number of buildings (>20000) will likely eat all of your RAM making the process slower. If you need to generate more than tens of thousands of buildings, consider not generating all LODs and representations (e.g. solids).
 
-Known issues
+Known issues and limitations
 ---------------------
 
 ### CityGML issues
 
 + The output files are stored in CityGML 2.0. Output in the legacy versions 0.4 and 1.0 is not available.
-+ There are multiple MultiSurface instances within the same thematic boundary (boundedBy), which might cause problems for some software packages. This will be fixed in the next version.
 
 ### Running issues
 
 The `generateCityGML.py` program has been known to crash in two cases:
 
 + It runs out of memory if too many buildings are attempted to be generated in CityGML. Reduce the number of buildings and/or their variants (e.g. disable the generation of solids).
-+ Uncommonly it crashes when it encounters a very peculiar building to be generated. This does not happen often, and when it does just generate a new set of buildings with `randomiseCity.py`.
++ Rarely it crashes when it encounters a very peculiar building to be generated (despite the established rules and constraints), some weird-looking buildings can still occur). This does not happen often, and when it does just generate a new set of buildings with `randomiseCity.py`.
+
+### General limitations
+
++ While this software prototype generates virtually unlimited CityGML data for free from scratch and in multiple LODs, which can be used for a multitude of purposes, this is not a commercial procedural modelling engine that can be considered as a complete standalone solution in many production workflows. 
 
 
 Special datasets
 ---------------------
 
-I have prepared a number of intentionally impaired datasets suited for different types of experiments, such as overlapping buildings and simulated geometric errors. For the full list visit the [data page](http://3dgeoinfo.bk.tudelft.nl/biljecki/Random3Dcity.html)
+I have prepared a number of intentionally impaired datasets suited for different types of experiments, such as overlapping buildings and simulated geometric errors. For the full list visit the [data page](https://3d.bk.tudelft.nl/biljecki/Random3Dcity.html)
 
-![Intentional errors](http://3dgeoinfo.bk.tudelft.nl/biljecki/github/random3dcity/R3-overlapping.png)
+![Intentional errors](https://3d.bk.tudelft.nl/biljecki/github/random3dcity/R3-overlapping.png)
 
 
 Contact me for questions and feedback
 ---------------------
 Filip Biljecki
 
-[3D Geoinformation Research Group](http://3dgeoinfo.bk.tudelft.nl/)
+[3D Geoinformation Research Group](https://3d.bk.tudelft.nl/)
 
 Faculty of Architecture and the Built Environment
 
@@ -203,7 +200,7 @@ Delft University of Technology
 
 email: fbiljecki at gmail dot com
 
-[Personal webpage](http://3dgeoinfo.bk.tudelft.nl/biljecki/)
+[Personal webpage](http://filipbiljecki.com/)
 
 
 Acknowledgments
