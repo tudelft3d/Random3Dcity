@@ -48,12 +48,12 @@ This software is free to use. You are kindly requested to acknowledge its use by
 
     @article{random3dcity,
         Author = {Biljecki, Filip and Ledoux, Hugo and Stoter, Jantien},
-        Doi = {10.5194/isprs-annals-III-4-W1-51-2016},
+        Doi = {10.5194/isprs-annals-IV-4-W1-51-2016},
         Journal = {ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci.},
         Pages = {51--59},
-        Pdf = {http://www.isprs-ann-photogramm-remote-sens-spatial-inf-sci.net/III-4-W1/51/2016/isprs-annals-III-4-W1-51-2016.pdf},
+        Pdf = {http://www.isprs-ann-photogramm-remote-sens-spatial-inf-sci.net/IV-4-W1/51/2016/isprs-annals-IV-4-W1-51-2016.pdf},
         Title = {{Generation of multi-LOD 3D city models in CityGML with the procedural modelling engine Random3Dcity}},
-        Vol = {III-4/W1},
+        Vol = {IV-4/W1},
         Year = {2016}
     }
 
