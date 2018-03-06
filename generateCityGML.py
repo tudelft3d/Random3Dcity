@@ -41,7 +41,6 @@ import numpy
 import math
 import uuid
 import copy
-from fish import ProgressFish
 
 
 #-- Parse command-line arguments
@@ -64,6 +63,8 @@ PARSER.add_argument('-s', '--street',
     help='Generate a road network.', required=False)
 PARSER.add_argument('-v', '--vegetation',
     help='Generate vegetation.', required=False)
+PARSER.add_argument('-rp', '--report',
+    help='Report on the progress. Disable with Python3.', required=False)
 
 def argRead(ar, default=None):
     """Corrects the argument input in case it is not in the format True/False."""
@@ -90,7 +91,15 @@ VARIANTS = argRead(ARGS['geometricref'], False)
 SOLIDS = argRead(ARGS['solids'], False)
 STREETS = argRead(ARGS['street'], False)
 VEGETATION = argRead(ARGS['vegetation'], False)
+REPORT = argRead(ARGS['report'], True)
 
+if REPORT:
+    try:
+        from fish import ProgressFish
+    except:
+        print("--Package Fish (used for reporting) failed to load, hence reporting is disabled--")
+        #-- Just disable reporting if Fish fails to load
+        REPORT = False
 
 #-- Name spaces
 ns_citygml = "http://www.opengis.net/citygml/2.0"
@@ -4909,10 +4918,12 @@ if VEGETATION:
 #-- Iterate the list of buildings in the XML and extract their data
 buildingcounter = 0
 print("Constructing buildings and other city objects...")
-fish = ProgressFish(total=len(buildings))
+if REPORT:
+    fish = ProgressFish(total=len(buildings))
 for b in buildings:
 	#-- Report on the progress
-    fish.animate(amount=buildingcounter+1)
+    if REPORT:
+        fish.animate(amount=buildingcounter+1)
     buildingcounter += 1
     #-- Building UUID
     ID = b.attrib['ID']
@@ -5746,10 +5757,12 @@ if VEGETATION:
 #-- Write to file(s)
 print("\nGenerated", len(CityGMLs), "CityGML file(s) in the memory. Now writing to disk...")
 filecounter = 0
-fish = ProgressFish(total=len(CityGMLs))
+if REPORT:
+    fish = ProgressFish(total=len(CityGMLs))
 for element in CityGMLs:
     #-- Report on the progress
-    fish.animate(amount=filecounter+1)
+    if REPORT:
+        fish.animate(amount=filecounter+1)
     filecounter += 1
     # print(filecounter, "...", end=' ')
     storeCityGML(element)

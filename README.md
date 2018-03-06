@@ -174,6 +174,13 @@ It is possible to generate an UUID for each <gml:Polygon> with the option `-id 1
 
 By default, buildings are placed in a local coordinate system. If you run the building randomiser with the option `-c 1`, the buildings will be placed in the Dutch coordinate system (RD new), somewhere in the Nordoostpolder in the Netherlands. You can easily customise this in the code. You don't have to toggle `-c 1` in the second script (`generateCityGML.py`).
 
+### Reporting of the progress
+
+When running `generateCityGML.py` it is possible to get the report of the progress of the script with `-rp 1`.
+This option is turned on by default. However, there have been reports of bugs when using Python3, so the option disables itself automatically if the underlying dependency cannot be loaded. Should you run into problems, disable it with `-rp 0`.
+
+
+
 Performance
 ---------------------
 
