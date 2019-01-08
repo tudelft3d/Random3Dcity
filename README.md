@@ -3,19 +3,18 @@ Random3Dcity
 
 A basic procedural modelling engine for generating random (synthetic) buildings and other features in CityGML in multiple levels of detail (LOD).
 
-![Overview](https://3d.bk.tudelft.nl/biljecki/code/img/R3-interior.png)
+![Overview](http://filipbiljecki.com/code/img/R3-interior.png)
 
 
 Ready to use datasets
 ---------------------
 
-If you are interested only in the datasets, without the need to run the code, please visit my webpage to download a prepared collection of datasets: [https://3d.bk.tudelft.nl/biljecki/Random3Dcity.html](http://3d.bk.tudelft.nl/biljecki/Random3Dcity.html)
+If you are interested only in the datasets, without the need to run the code, please visit [my webpage to download a prepared collection of datasets](http://filipbiljecki.com/code/Random3Dcity.html).
 
 Introduction
 ---------------------
 
-
-CityGML data (semantically structured 3D city models) in multiple LODs are not available. This project presents an effort to bridge this gap, by developing a basic procedural modelling engine which generates random CityGML buildings to test software and carry out various experiments. This experimental software prototype was developed as a part of my [PhD research](http://filipbiljecki.com/research/phd.html).
+CityGML data (semantically structured 3D city models) in multiple LODs are not available. This project presents an effort to bridge this gap, by developing a basic procedural modelling engine which generates random CityGML buildings to test software and carry out various experiments. This experimental software prototype was developed as a part of my [PhD research](http://filipbiljecki.com/phd.html).
 
 The engine is composed of two modules. The first one is procedural: it randomly generates buildings and their elements according to a set of rules and constraints. The buildings are realised through parameters which are stored in an XML form. The second part of the engine reads this data and constructs CityGML data in multiple LODs.
 
@@ -85,39 +84,39 @@ The software has been developed and tested on Mac OS X, and has not been tested 
 
 The engine supports five types of roofs: flat, gabled, hipped, pyramidal, and shed. Further, it supports also building parts such as garages and alcoves.
 
-![Roofs](https://3d.bk.tudelft.nl/biljecki/code/img/R3-roofTypes.png)
+![Roofs](http://filipbiljecki.com/code/img/R3-roofTypes.png)
 
 
 ### 16 Levels of detail
 
 The engine supports generating data in 16 levels of detail. The following composite render shows an example of four LODs:
 
-![LOD-composite](https://3d.bk.tudelft.nl/biljecki/code/img/R3-LOD-composite.png)
+![LOD-composite](http://filipbiljecki.com/code/img/R3-LOD-composite.png)
 
 
 The following image shows the specification of our novel LOD specification ("Delft LODs") according to which the models are generated. This specification will be published in details.
 
-![LOD-refined-specification](https://3d.bk.tudelft.nl/biljecki/code/img/R3-refinedLODs.png)
+![LOD-refined-specification](http://filipbiljecki.com/code/img/R3-refinedLODs.png)
 
 ### Geometric references
 
 Besides the LODs, the engine generates multiple representations according to geometric references within LODs, e.g. an LOD1 with varying heights of the top surface (height at the eaves, at the half of the roof, etc.)
 
-![Geometric references](https://3d.bk.tudelft.nl/biljecki/code/img/R3-LOD1cb.png)
+![Geometric references](http://filipbiljecki.com/code/img/R3-LOD1cb.png)
 
 
 ### Solids
 
 Each representation is constructed its corresponding solid.
 
-![Solids](https://3d.bk.tudelft.nl/biljecki/code/img/R3-assemblingSolid.png)
+![Solids](http://filipbiljecki.com/code/img/R3-assemblingSolid.png)
 
 
 ### Vegetation and streets
 
 An experimental feature is the generation of vegetation and streets.
 
-![Other-features](https://3d.bk.tudelft.nl/biljecki/code/img/R3-roads.png)
+![Other-features](http://filipbiljecki.com/code/img/R3-roads.png)
 
 
 ### Interior of buildings
@@ -127,7 +126,7 @@ A basic interior of buildings in three LODs may be generated: see the header in 
 Documented uses
 ---------------------
 
-Besides my [PhD](http://filipbiljecki.com/research/phd.html) in which I did a lot of experiments and benchmarking with CityGML data, the engine has been used for testing validation and repair software, and other purposes such as error propagation. For the full showcase visit the [data page](http://3d.bk.tudelft.nl/biljecki/Random3Dcity.html).
+Besides my [PhD](http://filipbiljecki.com/phd.html) in which I did a lot of experiments and benchmarking with CityGML data, the engine has been used for testing validation and repair software, and other purposes such as error propagation. For the full showcase visit the [data page](http://filipbiljecki.com/code/Random3Dcity.html).
 
 
 Usage and options
@@ -209,9 +208,9 @@ The `generateCityGML.py` program has been known to crash in two cases:
 Special datasets
 ---------------------
 
-I have prepared a number of intentionally impaired datasets suited for different types of experiments, such as overlapping buildings and simulated geometric errors. For the full list visit the [data page](https://3d.bk.tudelft.nl/biljecki/Random3Dcity.html).
+I have prepared a number of intentionally impaired datasets suited for different types of experiments, such as overlapping buildings and simulated geometric errors. For the full list visit the [data page](http://filipbiljecki.com/code/Random3Dcity.html).
 
-![Intentional errors](https://3d.bk.tudelft.nl/biljecki/code/img/R3-overlapping.png) 
+![Intentional errors](http://filipbiljecki.com/code/img/R3-overlapping.png) 
 
 
 Contact for questions and feedback
